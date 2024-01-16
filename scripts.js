@@ -112,7 +112,8 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Datos JSON a enviar:', jsonData);
 
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://localhost:7071/api/af_web_cumplimiento', true);
+        //xhr.open('POST', 'http://localhost:7071/api/af_web_cumplimiento', true);
+        xhr.open('POST', 'https://af-web-form.azurewebsites.net/api/af_web_cumplimiento?', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
