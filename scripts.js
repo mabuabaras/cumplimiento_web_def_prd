@@ -89,22 +89,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var jsonData = {
-            firstName: "",
-            secondName: "",
-            firstSurname: "",
-            secondSurname: "",
-            typeDocument: "",
-            document: "",
-            name: document.querySelector('input[name="name"]').value,
-            typePerson: "",
-            rol: "17",
-            codePerson: "",
-            codeModel: "ALERTAMASIVA",
-            typeModel: "3",
-            valueAlert: "1000000",
-            score: "500",
-            description: "Operaciones Inusuales",
-            valueModel: [formData]
+            "name": document.querySelector('input[name="name"]').value,
+            "typePerson": "F",
+            "rol": "17",
+            "codeModel": "ALERTAMANUAL",
+            "typeModel": "6",
+            "valueAlert": "1000000",
+            "score": "500",
+            "description": document.querySelector('input[name="detailedDescription"]').value,
+            "valueModel": [formData]
         };
 
         var jsonString = JSON.stringify([jsonData]);
