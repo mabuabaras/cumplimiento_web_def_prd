@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Línea Ética</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon"
+          href="https://sura.sistemaetico.com/assets/ico/60-52724596a0a30122e02d034ff2dc0dd240ee00de0910d4f90935dd96a8b72d56.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+          href="https://sura.sistemaetico.com/assets/ico/76-39c0983ee509617181b8c15f4668606c468f189f90021a7198c4497aa00a9c2a.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="https://sura.sistemaetico.com/assets/ico/120-e909769e3acf761922796d0d30a8a58a40041bcfe0b30efca7bee4b993913ab7.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="https://sura.sistemaetico.com/assets/ico/152-5aee10f3f532c8bce0c4d2e1166c2bcfc895c7065d1798d97ff70a5471cc952d.png">
+    <link rel="icon" type="image/png"
+          href="https://sura.sistemaetico.com/assets/ico/favicon-9d847601152dad080d102d12d726debdcb016ec077cdc8d89f7851315a9763d2.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta content="" name="description">
+    <meta content="" name="author">
+
+    <meta name="robots" content="index,follow">
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="is-preload">
+<div id="page-wrapper">
+    <!-- Main -->
+    <section id="main" class="container medium">
+        <header>
+            <h2>Enviar</h2>
+            <h3>Denuncia o Consulta</h3>
+            <p>Ó SIGA LOS PASOS DEL ASISTENTE EN LÍNEA&nbsp;Y HÁGANOS LLEGAR SU DENUNCIA O CONSULTA</p>
+        </header>
+
+        <div class="assistant-steps">
+            <div class="step" data-step="0">HECHOS DEL REPORTE</div>
+            <!-- <div class="step" data-step="1">DATOS DE QUIEN INFORMA</div> -->
+            <div class="step" data-step="2">LUGAR DE LOS HECHOS</div>
+        </div>
+        <div class="box">
+            <form method="post" id="reportForm">
+                <div class="row gtr-50 gtr-uniform">
+                    <!-- Pasos del Asistente -->
+
+                    <div class="form-section" data-section="0">
+                        <b>REPORTE</b>
+                        <div id="report" class="radio-group">
+                            <input id="report_1" type="radio" name="report" value="Consulta Etica">
+                            <label for="report_1">Consulta Ética</label>
+                            <input id="report_2" type="radio" name="report" value="Denuncia">
+                            <label for="report_2">Denuncia</label>
+                            <br>
+                        </div>
+
+                        <hr style="width:50%; margin-left:25% !important; margin-right:25% !important;"/>
+                        <div class="form-group form-group-attached form-group-default" style="display: block;">
+                            <b>DESCRIPCIÓN DETALLADA</b>
+                            <textarea id="detailedDescription" name="detailedDescription" required
+                                      placeholder="DESCRIPCIÓN DETALLADA"></textarea>
+                            <br>
+                        </div>
+
+                        <hr style="width:50%; margin-left:25% !important; margin-right:25% !important;"/>
+                        <b>INVOLUCRADOS DE LA DENUNCIA DETALLADA</b>
+                        <div class="involucrados-container">
+                            <div class="involved">
+                                <table class="default">
+                                    <tr>
+                                        <th>
+                                            <li><input type="text" name="name" placeholder="Nombre" required>
+                                        </th>
+                                        <th>
+                                            <li><input type="text" name="position " placeholder="Puesto de trabajo"
+                                                       required></li>
+                                        </th>
+                                        <th>
+                                            <li><select name="involved_type" required>
+                                                <option value="infractor">Infractor</option>
+                                                <option value="testigo">Testigo</option>
+                                                <option value="victima">Víctima</option>
+                                            </select></li>
+                                        </th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <br>
+                        </div>
+
+<!--                        <hr style="width:50%; margin-left:25% !important; margin-right:25% !important;"/>-->
+<!--                        <b>SELECCIONE EL TIPO (ESTE CAMPO ES OPCIONAL)</b>-->
+<!--                                                <div id="type" class="radio-group">-->
+<!--                                                    &lt;!&ndash; Botones de radio para TIPO se insertarán aquí &ndash;&gt;-->
+<!--                                                    <br>-->
+<!--                                                </div>-->
+
+						<input name="type" type="hidden" value="LAFT" />
+
+<!--                        <hr style="width:50%; margin-left:25% !important; margin-right:25% !important;"/>-->
+<!--                        <b id="subtypeLabel" style="display: none;"></b>-->
+<!--                                                <div id="subtype" class="radio-group" style="display: none;">-->
+<!--                                                    &lt;!&ndash; Botones de radio para SUBTIPO se insertarán aquí &ndash;&gt;-->
+<!--                                                    <br>-->
+<!--                                                </div>-->
+
+						<b>LAFT (ESTE CAMPO ES OPCIONAL)</b>
+						<div id="laft" class="radio-group">
+							<input id="subtype_1" type="radio" name="subtype" value="Lavado de Activos">
+							<label for="subtype_1">Lavado de Activos</label>
+							<input id="subtype_2" type="radio" name="subtype" value="Financiación del terrorismo">
+							<label for="subtype_2">Financiación del terrorismo</label>
+							<br>
+						</div>
+
+                    </div>
+
+                    <div class="form-section" data-section="1">
+<!--                        <b>PAÍS</b>-->
+<!--                        <div id="country" class="radio-group">-->
+<!--                            &lt;!&ndash; Botones de radio para PAÍS se insertarán aquí &ndash;&gt;-->
+<!--                            <br>-->
+<!--                        </div>-->
+
+						<input name="country" type="hidden" value="México" />
+
+						<b>DIVISIÓN - MÉXICO</b>
+
+						<div id="division" class="radio-group" style="display: block;">
+							<input id="division_1" type="radio" name="sector" value="Afore SURA">
+							<label for="division_1">Afore SURA</label>
+
+							<input id="division_2"type="radio" name="sector" value="Gestión Patrimonial">
+							<label for="division_2">Gestión Patrimonial</label>
+
+							<input id="division_3" type="radio" name="sector" value="Investment Management">
+							<label for="division_3">Investment Management</label>
+
+							<input id="division_4" type="radio" name="sector" value="QIIP">
+							<label for="division_4">QIIP</label>
+
+							<input id="division_5" type="radio" name="sector" value="Wealth Management">
+							<label for="division_5">Wealth Management</label>
+						</div>
+
+<!--                        <hr style="width:50%; margin-left:25% !important; margin-right:25% !important;"/>-->
+<!--                        <b id="divisionLabel">DIVISIÓN</b>-->
+<!--                        <div id="sector" class="radio-group" style="display: none;">-->
+<!--                            &lt;!&ndash; Botones de radio para DIVISIÓN se insertarán aquí &ndash;&gt;-->
+<!--                            <br>-->
+<!--                        </div>-->
+
+                        <hr style="width:50%; margin-left:25% !important; margin-right:25% !important;"/>
+                        <div class="form-group form-group-attached form-group-default" style="display: block;">
+                            <b for="place">¿DÓNDE SUCEDIERON LOS HECHOS? (ESTE CAMPO ES OPCIONAL)</b>
+                            <input type="text" id="place" name="place" required>
+                            <br>
+                        </div>
+
+                        <hr style="width:50%; margin-left:25% !important; margin-right:25% !important;"/>
+                        <div class="form-group form-group-attached form-group-default" style="display: block;">
+                            <b for="lapse">¿HACE CUÁNTO QUE SUCEDIERON LOS HECHOS? (ESTE CAMPO ES OPCIONAL)</b>
+                            <input type="text" id="lapse" name="lapse" required>
+                            <br>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12">
+                    <ul class="actions special">
+                        <!-- Botones de navegación -->
+                        <div class="form-navigation">
+                            <table class="default">
+                                <tr>
+                                    <th>
+                                        <li><input type="button" id="prevButton" value="Anterior"/></li>
+                                    </th>
+                                    <th>
+                                        <li><input type="button" id="nextButton" value="Siguiente"/></li>
+                                    </th>
+                                    <th>
+                                        <li><input type="submit" id="submitButton" style="display: none;"/></li>
+                                    </th>
+                                </tr>
+                            </table>
+                        </div>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="copyright">
+            <li>&copy; Sura-IM. All rights reserved.</li>
+            <li><a href="https://suraam.sistemaetico.com/">Sura-IM</a></li>
+        </ul>
+    </footer>
+
+</div>
+<div class="modal" id="responseModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Resultado de la Solicitud</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h6>Datos enviados:</h6>
+                <pre id="sentData"></pre>
+                <h6>Respuesta del servidor:</h6>
+                <pre id="serverResponse"></pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="cumlimiento_files/application-02a33baee9c7f606b79f4eaf19ba37631a2c3a3d920da01a2.js"
+		data-turbolinks-track="true" data-turbolinks-eval="true"></script>
+<script src="scripts.js"></script>
+
+</body>
+</html>

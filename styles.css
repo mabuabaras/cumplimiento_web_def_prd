@@ -1,0 +1,656 @@
+/*html *:not(.fa):not(i) {*/
+/*    font-family: 'Barlow' !important;*/
+/*}*/
+
+/*.m-t-25 .col-md-12 {*/
+/*    width: 120%;*/
+/*}*/
+
+/*#gm_entryways .col-md-3:first-child .panel-body {*/
+/*    height: 323px;*/
+/*}*/
+
+/*h1 {*/
+/*    !*color: #6a6a65;*!*/
+/*    color: #0033A0;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*h3 {*/
+/*    color: #00afc9;*/
+/*}*/
+
+/*h4 { !*h3*!*/
+/*    !*color: #0089bb;*!*/
+/*    color: #00afc9;*/
+/*}*/
+
+/*a {*/
+/*    color: #00afc9;*/
+/*}*/
+
+/*.aplicacion {*/
+/*    width: 170px;*/
+/*}*/
+
+/*.col-md-3 {*/
+/*    width: 50%;*/
+/*}*/
+
+/*td {*/
+/*    padding: 3px;*/
+/*}*/
+
+/*.panel .panel-heading {*/
+/*    text-align: center;*/
+/*}*/
+
+/*.panel .panel-body {*/
+/*    text-align: center;*/
+/*}*/
+
+/*section.b-grey {*/
+/*    display: none;*/
+/*}*/
+
+/*h1 {*/
+/*    color: #0033A0;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*h3 {*/
+/*    color: #00afc9;*/
+/*}*/
+
+/*h4 {*/
+/*    color: #00afc9*/
+/*}*/
+
+/*!* Cambio de colores Menú *!*/
+/*.header.light-solid .menu > li > a:not(.btn) {*/
+/*    color: #0033A0;*/
+/*    opacity: 0.9;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.header .menu > li > a > span {*/
+/*    color: #00afc9;*/
+/*    font-weight: normal;*/
+/*}*/
+
+/*!* Botón Consultar Reporte *!*/
+/*.input-group-btn:last-child > .btn {*/
+/*    background-color: #0033A0;*/
+/*}*/
+
+/*!* Botón siguiente en formulario *!*/
+/*.btn-info, .btn-info:focus {*/
+/*    color: #ffffff;*/
+/*    background-color: #0033A0;*/
+/*    border-color: #0033A0;*/
+/*}*/
+
+/*.btn-info.hover, .btn-info:hover, .open .dropdown-toggle.btn-info {*/
+/*    background-color: #00afc9;*/
+/*    border-color: #00afc9;*/
+/*    color: #ffffff;*/
+/*}*/
+
+/*!* Texto al terminar de llenar el formulario *!*/
+/*kbd {*/
+/*    background-color: #0033A0;*/
+/*}*/
+
+/*!* Botón enviar código de seguimiento *!*/
+/*.btn-primary, .btn-primary:focus {*/
+/*    color: #ffffff;*/
+/*    background-color: #0033A0;*/
+/*    border-color: #0033A0;*/
+/*}*/
+
+/*.btn-primary.hover, .btn-primary:hover, .open .dropdown-toggle.btn-primary {*/
+/*    background-color: #00afc9;*/
+/*    border-color: #00afc9;*/
+/*    color: #ffffff;*/
+/*}*/
+
+/*!* contenedor teléfonos *!*/
+/*#gm_entryways .col-md-2:last-child {*/
+/*    width: 66% !important;*/
+/*}*/
+
+/*#gm_entryways .col-md-2:last-child .panel-body {*/
+/*    height: 285px;*/
+/*}*/
+
+/*.table-phones {*/
+/*    border: 0;*/
+/*    font-weight: bold;*/
+/*    font-size: 13px;*/
+/*    width: 90%;*/
+/*    margin-left: 40px;*/
+/*}*/
+
+/*.table-phones table:first-child {*/
+/*    float: left;*/
+/*}*/
+
+/*.table-phones table:last-child {*/
+/*    float: right;*/
+/*}*/
+
+/*.table-phones tr > td:first-child {*/
+/*    text-align: right;*/
+/*}*/
+
+/*.table-phones td {*/
+/*    border: 0;*/
+/*    padding-bottom: 5px;*/
+/*    vertical-align: top;*/
+/*}*/
+
+/*.table-phones tr > td:last-child {*/
+/*    text-align: left;*/
+/*    padding-left: 10px;*/
+/*}*/
+
+
+/*.como_denunciar_o_hacer_una_consulta .table-phones {*/
+/*    border: 0;*/
+/*    font-weight: bold;*/
+/*    font-size: 13px;*/
+/*    width: 80%;*/
+/*    margin-left: 10%;*/
+/*}*/
+
+/*.como_denunciar_o_hacer_una_consulta .table-phones table:first-child {*/
+/*    float: left;*/
+/*}*/
+
+/*.como_denunciar_o_hacer_una_consulta .table-phones table:last-child {*/
+/*    float: right;*/
+/*}*/
+
+/*.como_denunciar_o_hacer_una_consulta .table-phones tr > td:first-child {*/
+/*    text-align: right;*/
+/*}*/
+
+/*.como_denunciar_o_hacer_una_consulta .table-phones td {*/
+/*    border: 0;*/
+/*    padding-bottom: 5px;*/
+/*    vertical-align: top;*/
+/*}*/
+
+/*.como_denunciar_o_hacer_una_consulta .table-phones tr > td:last-child {*/
+/*    text-align: left;*/
+/*    padding-left: 10px;*/
+/*}*/
+
+/*.how_to_report_or_make_a_query .table-phones {*/
+/*    border: 0;*/
+/*    font-weight: bold;*/
+/*    font-size: 13px;*/
+/*    width: 80%;*/
+/*    margin-left: 10%;*/
+/*}*/
+
+/*.como_denunciar .table-phones {*/
+/*    border: 0;*/
+/*    font-weight: bold;*/
+/*    font-size: 13px;*/
+/*    width: 80%;*/
+/*    margin-left: 10%;*/
+/*}*/
+
+/*.row#img_center {*/
+/*    left: 25%;*/
+/*    width: 100%;*/
+/*    min-height: 35%;*/
+/*    position: absolute;*/
+/*    z-index: 10;*/
+/*    top: 25%;*/
+/*    display: none;*/
+/*}*/
+
+/*#square-wrapper {*/
+/*    height: 99%*/
+/*}*/
+
+/*#centered-square {*/
+/*    width: 35%;*/
+/*    height: 100%;*/
+/*    margin: auto;*/
+/*}*/
+
+/*@media screen  and (max-width: 992px) {*/
+/*    #centered-square {*/
+/*        width: 90%;*/
+/*    }*/
+/*}*/
+
+/*#centered-square h3 {*/
+/*    text-align: center;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*#centered-square p {*/
+/*    font-size: 16px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*#centered-square .c-buttons {*/
+/*    width: 70px;*/
+/*}*/
+
+/*@media screen and (max-width: 420px) {*/
+/*    #centered-square p {*/
+/*        font-size: 12px;*/
+/*        line-height: 12px;*/
+/*    }*/
+
+/*    .row#img_center {*/
+/*        top: 36%;*/
+/*    }*/
+/*}*/
+
+/*@media (min-width: 992px) {*/
+/*    .modal-lg {*/
+/*        width: 800px !important;*/
+/*    }*/
+/*}*/
+
+/*@media (min-width: 768px) {*/
+/*    .modal-dialog {*/
+/*        margin: 170px auto !important;*/
+/*    }*/
+/*}*/
+
+/*.modal-content {*/
+/*    background-color: rgba(255, 255, 255, 0.9);*/
+/*}*/
+
+/*!* Modal App *!*/
+/*.modal .modal-body {*/
+/*    text-align: center;*/
+/*}*/
+
+/*.modal-body .app img {*/
+/*    width: 185px;*/
+/*}*/
+
+/*!* Modal Teléfonos *!*/
+/*.table-phones {*/
+/*    border: 0;*/
+/*    font-size: 13px;*/
+/*    width: 60%;*/
+/*    margin-left: 20%;*/
+/*}*/
+
+/*.table-phones table:first-child {*/
+/*    float: left;*/
+/*}*/
+
+/*.table-phones table:last-child {*/
+/*    float: right;*/
+/*}*/
+
+/*.table-phones tr > td:first-child {*/
+/*    text-align: right;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.table-phones td {*/
+/*    border: 0;*/
+/*    padding-bottom: 5px;*/
+/*    vertical-align: top;*/
+/*}*/
+
+/*.table-phones tr > td:last-child {*/
+/*    text-align: left;*/
+/*    padding-left: 10px;*/
+/*}*/
+
+/*.repdom {*/
+/*    line-height: 21px;*/
+/*}*/
+
+/*.numrep {*/
+/*    padding-top: 15px;*/
+/*}*/
+
+/*@media (max-width: 1400px) {*/
+/*    .m-t-25 .col-md-12 {*/
+/*        width: 100%;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 1313px) {*/
+/*    #centered-square .c-buttons {*/
+/*        width: 55px;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 1057px) {*/
+/*    .row#img_center {*/
+/*        top: 30%;*/
+/*    }*/
+
+/*    h4 {*/
+/*        font-size: 16px;*/
+/*        line-height: 26.88px;*/
+/*    }*/
+
+/*    #centered-square .c-buttons {*/
+/*        width: 50px;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 992px) {*/
+/*    .row#img_center {*/
+/*        left: 0%;*/
+/*        width: 98%;*/
+/*        min-height: 35%;*/
+/*        position: absolute;*/
+/*        z-index: 10;*/
+/*        top: -10%;*/
+/*    }*/
+
+/*    .modal-dialog {*/
+/*        width: 550px !important;*/
+/*    }*/
+
+/*    .table-phones {*/
+/*        width: 96%;*/
+/*        margin-left: 0%;*/
+/*    }*/
+
+/*    .table-phones table:first-child {*/
+/*        margin-left: 55px;*/
+/*    }*/
+
+/*    .table-phones table:last-child {*/
+/*        margin-right: 25px;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 991px) {*/
+/*    .header.dark .menu-content .menu > li > a:not(.btn).active,*/
+/*    .header.light .menu-content .menu > li > a:not(.btn).active,*/
+/*    .header.light-solid .menu-content .menu > li > a:not(.btn).active,*/
+/*    .header.transparent-dark .menu-content .menu > li > a:not(.btn).active,*/
+/*    .header.transparent-light .menu-content .menu > li > a:not(.btn).active {*/
+/*        background-color: #0033A0;*/
+/*        color: #ffffff;*/
+/*    }*/
+
+/*    !* .header .menu>li>a>span {*/
+/*    color: #fff;*/
+/*} *!*/
+/*}*/
+
+/*@media (max-width: 900px) {*/
+/*    .row#img_center {*/
+/*        top: -5%;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 860px) {*/
+/*    .row#img_center {*/
+/*        top: 0%;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 768px) {*/
+/*    .row#img_center {*/
+/*        top: 10%;*/
+/*    }*/
+
+/*    .modal-dialog {*/
+/*        margin: 27% auto !important;*/
+/*    }*/
+
+/*    .modal-body .app img {*/
+/*        width: 160px;*/
+/*    }*/
+
+/*    !*ocultar hamburguesa*!*/
+/*    .pull-right .header-inner {*/
+/*        display: none;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 700px) {*/
+/*    .row#img_center {*/
+/*        top: 17%;*/
+/*    }*/
+
+/*    .modal-dialog {*/
+/*        margin: 30% auto !important;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 650px) {*/
+/*    .row#img_center {*/
+/*        top: 20%;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 600px) {*/
+/*    .row#img_center {*/
+/*        top: 25%;*/
+/*    }*/
+
+/*    .modal-dialog {*/
+/*        width: 425px !important;*/
+/*    }*/
+
+/*    .table-phones table:first-child {*/
+/*        margin-left: 0px;*/
+/*    }*/
+
+/*    .table-phones table:last-child {*/
+/*        margin-right: -15px;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 550px) {*/
+/*    .row#img_center {*/
+/*        top: 29%;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 500px) {*/
+/*    .row#img_center {*/
+/*        top: 29%;*/
+/*    }*/
+
+/*    .modal-dialog {*/
+/*        width: 370px !important;*/
+/*        margin: 30% auto !important;*/
+/*    }*/
+
+/*    .modal .modal-body {*/
+/*        padding-left: 0px !important;*/
+/*        padding-right: 0px !important;*/
+/*    }*/
+
+/*    .app img {*/
+/*        width: 150px;*/
+/*    }*/
+
+/*    .table-phones table:first-child {*/
+/*        margin-left: 27%;*/
+/*    }*/
+
+/*    .table-phones table:last-child {*/
+/*        margin-right: 20%;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 470px) {*/
+/*    .row#img_center {*/
+/*        top: 35%;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 430px) {*/
+/*    .row#img_center {*/
+/*        top: 39%;*/
+/*    }*/
+
+/*    h4 {*/
+/*        font-size: 15px;*/
+/*        line-height: 23.88px;*/
+/*    }*/
+
+/*    #centered-square .c-buttons {*/
+/*        width: 45px;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 380px) {*/
+/*    .row#img_center {*/
+/*        left: 4%;*/
+/*        top: 43%;*/
+/*    }*/
+
+/*    #centered-square .c-buttons {*/
+/*        width: 40px;*/
+/*    }*/
+
+/*    .modal-dialog {*/
+/*        width: 300px !important;*/
+/*        margin: 80px auto !important;*/
+/*    }*/
+
+/*    .app h4 {*/
+/*        font-size: 13px !important;*/
+/*    }*/
+
+/*    .app img {*/
+/*        width: 120px;*/
+/*    }*/
+
+/*    .app img:last-child {*/
+/*        margin-top: 10px;*/
+/*    }*/
+
+/*    .table-phones table {*/
+/*        font-size: 13px;*/
+/*    }*/
+
+/*    .table-phones table:first-child {*/
+/*        margin-left: 20%;*/
+/*    }*/
+
+/*    .table-phones table:last-child {*/
+/*        margin-right: 14%;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 325px) {*/
+/*    .row#img_center {*/
+/*        top: 49%;*/
+/*    }*/
+
+/*    .c-buttons {*/
+/*        width: 35px;*/
+/*        margin-left: 0px !important;*/
+/*    }*/
+
+/*    .modal-dialog {*/
+/*        width: 280px !important;*/
+/*    }*/
+
+/*    .table-phones table:first-child {*/
+/*        margin-left: 18%;*/
+/*    }*/
+
+/*    .table-phones table:last-child {*/
+/*        margin-right: 12%;*/
+/*    }*/
+/*}*/
+
+/*.daterangepicker.dropdown-menu {*/
+/*    width: 247px !important;*/
+/*}*/
+
+
+/*@media (max-width: 560px) {*/
+/*    .email-notification {*/
+/*        position: relative !important;*/
+/*    }*/
+/*}*/
+
+/*!* Estilos del formulario anterior *!*/
+/*.form-container {*/
+/*    width: 80%;*/
+/*    margin: 0 auto;*/
+/*    background-color: #f0f0f0;*/
+/*    padding: 20px;*/
+/*    border-radius: 10px;*/
+/*    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*.step {*/
+/*    font-weight: bold;*/
+/*    margin-bottom: 20px;*/
+/*    font-size: 20px;*/
+/*}*/
+
+/*.radio-group {*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*.radio-group input[type="radio"] {*/
+/*    margin-right: 10px;*/
+/*}*/
+
+/*.form-group input[type="text"],*/
+/*.form-group select,*/
+/*.form-group textarea {*/
+/*    width: 100%;*/
+/*    padding: 10px;*/
+/*    margin-bottom: 10px;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*.form-navigation {*/
+/*    text-align: center;*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*.form-navigation button {*/
+/*    background-color: #007bff;*/
+/*    color: #fff;*/
+/*    padding: 10px 20px;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*    margin-right: 10px;*/
+/*}*/
+
+/*!* Estilos específicos del formulario anterior *!*/
+/*.involucrados-container {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    gap: 10px;*/
+/*}*/
+
+/*.involved {*/
+/*    flex-basis: calc(33.33% - 10px);*/
+/*}*/
+
+.step {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.step.active {
+    background-color: #007bff; /* Cambia el color a tu elección */
+    color: #fff; /* Cambia el color de texto a tu elección */
+}

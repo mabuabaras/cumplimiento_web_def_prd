@@ -1,0 +1,116 @@
+{
+  "tipos": [
+    {
+      "tipo": "Fraude",
+      "subtipos": [
+        "Fraude Interno",
+        "Fraude Externo",
+        "Fraude al Reporte Financiero",
+        "Delitos Informáticos",
+        "Fraude en convocatorias y/o SOAT"
+      ]
+    },
+    {
+      "tipo": "LAFT",
+      "subtipos": [
+        "Lavado de Activos",
+        "Financiación del terrorismo"
+      ]
+    },
+    {
+      "tipo": "Derechos Humanos",
+      "subtipos": [
+        "Acoso Sexual",
+        "Discriminación",
+        "Otro"
+      ]
+    },
+    {
+      "tipo": "Derechos Laborales",
+      "subtipos": [
+        "Acoso Laboral",
+        "Clima Laboral",
+        "Queja de un Líder",
+        "Favorecimiento",
+        "Conducta inadecuada del empleado",
+        "Otro"
+      ]
+    },
+    {
+      "tipo": "Malas Prácticas Comerciales",
+      "subtipos": [
+        "Ventas Forzadas o Engañosas",
+        "Publicidad Engañosa",
+        "Prácticas Restrictivas de la Competencia",
+        "Malas Prácticas entre Empleados / Asesores",
+        "Cambio de Asesor / Disputa por Comisión",
+        "Contacto a Clientes No Asignados",
+        "Otro"
+      ]
+    },
+    {
+      "tipo": "Soborno y Corrupción",
+      "subtipos": [
+        "Soborno a Funcionarios Públicos Local o Extranjero",
+        "Corrupción Interna",
+        "Corrupción con Terceros Externos"
+      ]
+    },
+    {
+      "tipo": "Datos Personales",
+      "subtipos": [
+        "Acceso Indebido a Sistemas de Información",
+        "Uso Indebido de Bases de Datos",
+        "Exposición Indebidas de Datos Personales"
+      ]
+    },
+    {
+      "tipo": "Conflictos de Intereses",
+      "subtipos": [
+        "Con Proveedores",
+        "De Colaboradores",
+        "De Miembros de Junta Directiva o Alta Gerencia",
+        "En Inversiones Personales",
+        "Aceptación o Entrega de Regalos, Participación en Eventos"
+      ]
+    },
+    {
+      "tipo": "Propiedad Intelectual / Uso de la Marca",
+      "subtipos": [
+        "Uso Indebido de Marca y/o Logo",
+        "Medios de Comunicación y/o Afectación de la Imagen"
+      ]
+    },
+    {
+      "tipo": "Otros",
+      "subtipos": [
+      ]
+    }
+  ],
+  "division": [
+    {
+      "country": "Chile",
+      "sectors": ["Administradora General de Fondos", "AFP Capital", "Corredora de Bolsa", "Seguros de vida Sura"]
+    },
+    {
+      "country": "Colombia",
+      "sectors": ["Asulado", "Sura IM Gestora de Inversiones S.A.S.", "SURA Investment Management Colombia S.A.S. ", "Fiduciaria SURA", "Protección", "Sura Asset Management (Corporativo)", "Unión para la Infraestructura (UPI)"]
+    },
+    {
+      "country": "El Salvador",
+      "sectors": ["Crecer"]
+    },
+    {
+      "country": "México",
+      "sectors": ["Afore SURA", "Gestión Patrimonial", "Investment Management", "QIIP", "Wealth Management"]
+    },
+    {
+      "country": "Perú",
+      "sectors": ["AFP Integra", "Fondos SURA", "SAB SURA", "Titulizadora SURA", "Unión para la Infraestructura (UPI)"]
+    },
+    {
+      "country": "Uruguay",
+      "sectors": ["AFAP", "AFISA", "Corredora de Bolsa"]
+    }
+  ]
+}

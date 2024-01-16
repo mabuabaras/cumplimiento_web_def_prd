@@ -1,0 +1,38 @@
+.Twilio {
+    z-index: 999999;
+}
+  
+button.Twilio {
+    bottom: 120px;
+}
+  
+.Twilio-MainContainer {
+    bottom: 170px;
+}
+
+.MessageCanvasTrayContent{
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.MessageCanvasTrayButton{
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.textFinishChat{
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+button.Twilio.Twilio-EntryPoint {
+    color: white;
+}
+    
+button.Twilio.Twilio-EntryPoint div.Twilio-EntryPoint-Tagline {
+    color: white;
+}
+
+button.Twilio-Button.Twilio-DynamicForm-submit{
+    color: white;
+}
