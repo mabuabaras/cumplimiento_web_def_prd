@@ -72,38 +72,30 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function sendDataToEndpoint() {
-        // Crear un objeto para almacenar todos los campos del formulario
         var formData = {};
-
-        // Obtener todos los elementos de formulario dentro del formulario con el id "reportForm"
         var formElements = document.getElementById('reportForm').elements;
 
-        // Iterar a través de los elementos del formulario y agregarlos al objeto formData
         for (var i = 0; i < formElements.length; i++) {
             var element = formElements[i];
-            if (element.type !== 'submit' || element.name === '') { // Excluir el botón de envío
+            if (element.type !== 'submit' && element.name !== '') {
                 formData[element.name] = element.value;
             }
         }
 
-        // Eliminar las entradas con valores vacíos o indefinidos
         for (var key in formData) {
             if (formData.hasOwnProperty(key) && (formData[key] === "" || formData[key] === undefined)) {
                 delete formData[key];
             }
         }
 
-
-        // Construir el objeto jsonData con todos los campos del formulario en valueModel
-        // Construir el objeto jsonData con los datos predefinidos
         var jsonData = {
-            firstName: "", // Agregar los valores correspondientes
-            secondName: "", // Agregar los valores correspondientes
-            firstSurname: "", // Agregar los valores correspondientes
-            secondSurname: "", // Agregar los valores correspondientes
-            typeDocument: "", // Agregar los valores correspondientes
-            document: "", // Agregar los valores correspondientes
-            name: document.querySelector('input[name="name"]').value, // Usar el campo "name" del formulario
+            firstName: "",
+            secondName: "",
+            firstSurname: "",
+            secondSurname: "",
+            typeDocument: "",
+            document: "",
+            name: document.querySelector('input[name="name"]').value,
             typePerson: "",
             rol: "17",
             codePerson: "",
@@ -112,69 +104,39 @@ document.addEventListener('DOMContentLoaded', function () {
             valueAlert: "1000000",
             score: "500",
             description: "Operaciones Inusuales",
-            valueModel: []
+            valueModel: [formData]
         };
 
-        // Combinar los datos del formulario con los datos predefinidos
-        // var formData = {
-        //     report: document.querySelector('input[name="report"]:checked').value,
-        //     detailedDescription: document.getElementById('detailedDescription').value,
-        //     name: document.querySelector('input[name="name"]').value,
-        //     position: document.querySelector('input[name="position"]').value,
-        //     involved_type: document.querySelector('select[name="involved_type"]').value,
-        //     type: document.querySelector('input[name="type"]:checked').value,
-        //     subtype: document.querySelector('input[name="subtype"]:checked').value,
-        //     country: document.querySelector('input[name="country"]:checked').value,
-        //     sector: document.querySelector('input[name="sector"]:checked').value,
-        //     place: document.getElementById('place').value,
-        //     lapse: document.getElementById('lapse').value
-        // };
-
-        // Agregar formData al array valueModel
-        jsonData.valueModel.push(formData);
-
-        // Convertir el objeto jsonData en una cadena JSON
         var jsonString = JSON.stringify([jsonData]);
-
         console.log('Datos del formulario:', formData);
         console.log('Datos JSON a enviar:', jsonData);
 
-        // Configurar la solicitud POST
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Authorization", "Basic d3MudGVzdDpNd013OEs1QypTUkJHOA==");
-        myHeaders.append("Cookie", "XSRF-TOKEN=eyJpdiI6ImlSR2VFWlp3Ry9PbDErdjJ2cXNsb0E9PSIsInZhbHVlIjoiNUNNejc0TXp1Q09Ub0pmYlJobkUzYWxTdDd4OUJ3V2NHaEFYZjVCL2VPa3FXU1plN1RCY2wxYk1pRnMwOXJvTzI1WmxlMjM3L3FnYTZnZ08xa0VtTDlEeWJFT0k3R2hTWFhwcy9OQnZMU2tjUVVZNFgzUmtLakhJRHFKc282aU0iLCJtYWMiOiI4NDAwZjA0ZTcxNGQxYjc5Njk2ZTQwMDFlYmJkMmUzYWVlOTc5Yjg5NzcwMWM5NTI4NTY4ZjcxNmI2OTA1YmE1IiwidGFnIjoiIn0%3D; case_manager_session=eyJpdiI6ImhrRUZkYjF5QisvWFQrOG1DV3h1Mmc9PSIsInZhbHVlIjoicVJ5WEMrYkRiMVdyTlBNWFlNcmlQczIxWTZydUdoMU1PeTlNR0tPZVcxbXNlZG9xU3JwYzJjeG1IRWNvOS9WRW5aOUgvS2UwUHppN1pLNTE0MkxuZmN0cTVrc2JpWCtqRGRJL285SUdZTDZaNmlqeEtvb3NUZ3dIUmJkQml2SmEiLCJtYWMiOiJlMTk2YzQ3ZjM5ZTQ1NGE0YThlMTMyZmM1YzAxMGE0ZjhlZmVjOTIyYjJmODUwMWUyZTdiYTIwYmU0NmJiNjY0IiwidGFnIjoiIn0%3D");
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://localhost:7071/api/af_web_cumplimiento', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                document.getElementById('sentData').textContent = jsonString;
+                document.getElementById('serverResponse').textContent = xhr.status === 200 ? xhr.responseText : xhr.statusText;
 
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: jsonData,
-            credentials: 'include', // Configurar para incluir credenciales
-            redirect: 'follow'
+                var responseModal = new bootstrap.Modal(document.getElementById('responseModal'));
+                responseModal.show();
+            }
         };
 
-        // Enviar la solicitud al endpoint
-        fetch("https://mxsdcm.stradata.com.co/api/v1/cases/store", requestOptions)
-            .then(response => response.text())
-            .then(result => {
-                // Mostrar los datos enviados y la respuesta en el modal
-                document.getElementById('sentData').textContent = jsonData;
-                document.getElementById('serverResponse').textContent = result;
+        try {
+            console.log('Enviando JSON:', jsonString);
+            xhr.send(jsonString);
+        } catch (error) {
+            console.error('Error al enviar la solicitud AJAX:', error);
+            document.getElementById('sentData').textContent = jsonString;
+            document.getElementById('serverResponse').textContent = 'Error al enviar la solicitud AJAX: ' + error.message;
 
-                // Mostrar el modal
-                var responseModal = new bootstrap.Modal(document.getElementById('responseModal'));
-                responseModal.show();
-            })
-            .catch(error => {
-                // Manejar errores y mostrarlos en el modal
-                document.getElementById('sentData').textContent = jsonData;
-                document.getElementById('serverResponse').textContent = 'Error al enviar los datos:\n' + error;
-
-                // Mostrar el modal
-                var responseModal = new bootstrap.Modal(document.getElementById('responseModal'));
-                responseModal.show();
-            });
+            var responseModal = new bootstrap.Modal(document.getElementById('responseModal'));
+            responseModal.show();
+        }
     }
+
 
     function createRadioButtonsForType(typeData) {
         var tipoContainer = document.getElementById('type');
