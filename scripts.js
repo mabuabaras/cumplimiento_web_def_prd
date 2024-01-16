@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "typeModel": "6",
             "valueAlert": "1000000",
             "score": "500",
-            "description": document.querySelector('input[name="detailedDescription"]').value,
+            "description": formData['detailedDescription'],
             "valueModel": [formData]
         };
 
