@@ -64,8 +64,19 @@
                         <hr style="width:50%; margin-left:25% !important; margin-right:25% !important;"/>
                         <div class="form-group form-group-attached form-group-default" style="display: block;">
                             <b>DESCRIPCIÓN DETALLADA</b>
-                            <textarea id="detailedDescription" name="detailedDescription" required
-                                      placeholder="DESCRIPCIÓN DETALLADA"></textarea>
+                            <textarea id="detailedDescription" name="detailedDescription"
+                                      placeholder="DESCRIPCIÓN DETALLADA" required></textarea>
+                            <br>
+                        </div>
+
+                        <div class="form-group form-group-attached form-group-default" style="display: block;">
+                            <b>EMAIL</b>
+                            <input
+                                    type="text"
+                                    pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                                    id="email"
+                                    name="email"
+                            >
                             <br>
                         </div>
 
@@ -79,9 +90,12 @@
                                             <li><input type="text" name="name" placeholder="Nombre" required>
                                         </th>
                                         <th>
-                                            <li><input type="text" name="position " placeholder="Puesto de trabajo"
-                                                       required></li>
+                                            <li><input type="text" name="area" placeholder="Area de trabajo" required></li>
                                         </th>
+                                        <th>
+                                            <li><input type="text" name="position" placeholder="Puesto de trabajo"></li>
+                                        </th>
+
                                         <th>
                                             <li><select name="involved_type" required>
                                                 <option value="infractor">Infractor</option>
@@ -205,28 +219,28 @@
         </ul>
     </footer>
 
-</div>
-<div class="modal" id="responseModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Resultado de la Solicitud</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h6>Datos enviados:</h6>
-                <pre id="sentData"></pre>
-                <h6>Respuesta del servidor:</h6>
-                <pre id="serverResponse"></pre>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
+<!--</div>-->
+<!--<div class="modal" id="responseModal" tabindex="-1" role="dialog">-->
+<!--    <div class="modal-dialog" role="document">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--                <h5 class="modal-title">Resultado de la Solicitud</h5>-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">-->
+<!--                    <span aria-hidden="true">&times;</span>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--                <h6>Datos enviados:</h6>-->
+<!--                <pre id="sentData"></pre>-->
+<!--                <h6>Respuesta del servidor:</h6>-->
+<!--                <pre id="serverResponse"></pre>-->
+<!--            </div>-->
+<!--            <div class="modal-footer">-->
+<!--                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
