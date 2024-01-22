@@ -14,9 +14,16 @@ document.addEventListener('DOMContentLoaded', function () {
     function areRequiredFieldsFilled(sectionIndex) {
         var section = sections[sectionIndex];
         var requiredFields = section.querySelectorAll('[required]');
+        var emailField = section.querySelector('input[type="text"][name="email"]');
 
         for (var i = 0; i < requiredFields.length; i++) {
-            if (requiredFields[i].value.trim() === '') {
+            if (requiredFields[i].name === "email") {
+                // Si el campo de email está presente pero no está vacío, verifica su formato.
+                if (emailField && emailField.value.trim() !== '' && !isValidEmail(emailField.value.trim())) {
+                    alert('Por favor, ingrese un email válido.');
+                    return false;
+                }
+            } else if (requiredFields[i].value.trim() === '') {
                 return false; // Al menos un campo requerido está vacío
             }
         }
@@ -108,10 +115,32 @@ document.addEventListener('DOMContentLoaded', function () {
         //xhr.open('POST', 'http://localhost:7071/api/af_web_cumplimiento', true);
         xhr.open('POST', 'https://af-web-form.azurewebsites.net/api/af_web_cumplimiento?', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
+        // xhr.onreadystatechange = function () {
+        //     if (xhr.readyState === XMLHttpRequest.DONE) {
+        //         document.getElementById('sentData').textContent = jsonString;
+        //         document.getElementById('serverResponse').textContent = xhr.status === 200 ? xhr.responseText : xhr.statusText;
+        //
+        //
+        //
+        //         var responseModal = new bootstrap.Modal(document.getElementById('responseModal'));
+        //         responseModal.show();
+        //     }
+        // };
+
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 document.getElementById('sentData').textContent = jsonString;
-                document.getElementById('serverResponse').textContent = xhr.status === 200 ? xhr.responseText : xhr.statusText;
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.casesSuccess && response.casesSuccess.length > 0 && response.casesSuccess[0].infoCreatedCase) {
+                        var caseID = response.casesSuccess[0].infoCreatedCase.caseID;
+                        alert("Case ID: " + caseID); // Mostrar el alerta con el case ID
+                    } else {
+                        alert("No se encontró información de Case ID en la respuesta.");
+                    }
+                } else {
+                    document.getElementById('serverResponse').textContent = xhr.statusText;
+                }
 
                 var responseModal = new bootstrap.Modal(document.getElementById('responseModal'));
                 responseModal.show();
@@ -121,6 +150,8 @@ document.addEventListener('DOMContentLoaded', function () {
         try {
             console.log('Enviando JSON:', jsonString);
             xhr.send(jsonString);
+
+            // window.alert('Okay, si estas seguro.');
         } catch (error) {
             console.error('Error al enviar la solicitud AJAX:', error);
             document.getElementById('sentData').textContent = jsonString;
