@@ -78,10 +78,32 @@ document.addEventListener('DOMContentLoaded', function () {
         submitButton.style.display = currentSectionIndex === sections.length - 1 ? 'inline-block' : 'none';
     }
 
-    function sendDataToEndpoint() {
+    // Esta función envía una solicitud AJAX y devuelve una promesa
+    function sendAjaxRequest(jsonString) {
+        return new Promise((resolve, reject) => {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://af-web-form.azurewebsites.net/api/af_web_cumplimiento?', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    resolve(JSON.parse(xhr.responseText));
+                } else {
+                    reject(xhr.statusText);
+                }
+            };
+            xhr.onerror = function() {
+                reject("Error en la solicitud AJAX");
+            };
+            xhr.send(jsonString);
+        });
+    }
+
+// Función asíncrona para manejar la solicitud y respuesta
+    async function sendDataToEndpoint() {
         var formData = {};
         var formElements = document.getElementById('reportForm').elements;
 
+        // Recolectar datos del formulario
         for (var i = 0; i < formElements.length; i++) {
             var element = formElements[i];
             if (element.type !== 'submit' && element.name !== '') {
@@ -89,12 +111,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
+        // Remover campos vacíos o indefinidos
         for (var key in formData) {
             if (formData.hasOwnProperty(key) && (formData[key] === "" || formData[key] === undefined)) {
                 delete formData[key];
             }
         }
 
+        // Preparar el JSON a enviar
         var jsonData = {
             "name": document.querySelector('input[name="name"]').value,
             "typePerson": "F",
@@ -111,59 +135,29 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Datos del formulario:', formData);
         console.log('Datos JSON a enviar:', jsonData);
 
-        var xhr = new XMLHttpRequest();
-        //xhr.open('POST', 'http://localhost:7071/api/af_web_cumplimiento', true);
-        xhr.open('POST', 'https://af-web-form.azurewebsites.net/api/af_web_cumplimiento?', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        // xhr.onreadystatechange = function () {
-        //     if (xhr.readyState === XMLHttpRequest.DONE) {
-        //         document.getElementById('sentData').textContent = jsonString;
-        //         document.getElementById('serverResponse').textContent = xhr.status === 200 ? xhr.responseText : xhr.statusText;
-        //
-        //
-        //
-        //         var responseModal = new bootstrap.Modal(document.getElementById('responseModal'));
-        //         responseModal.show();
-        //     }
-        // };
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                var sentDataElement = document.getElementById('sentData');
-                var serverResponseElement = document.getElementById('serverResponse');
-                if (sentDataElement) sentDataElement.textContent = jsonString;
-        
-                if (xhr.status === 200) {
-                    var response = JSON.parse(xhr.responseText);
-                    if (response.casesSuccess && response.casesSuccess.length > 0 && response.casesSuccess[0].infoCreatedCase) {
-                        var caseID = response.casesSuccess[0].infoCreatedCase.caseID;
-                        alert("Case ID: " + caseID); // Mostrar el alerta con el case ID
-                    } else {
-                        alert("No se encontró información de Case ID en la respuesta.");
-                    }
-                } else {
-                    if (serverResponseElement) serverResponseElement.textContent = xhr.statusText;
-                }
-        
-                var responseModal = new bootstrap.Modal(document.getElementById('responseModal'));
-                if (responseModal) responseModal.show();
-            }
-        };
-
         try {
-            console.log('Enviando JSON:', jsonString);
-            xhr.send(jsonString);
+            // Enviar la solicitud y esperar la respuesta
+            var response = await sendAjaxRequest(jsonString);
 
-            // window.alert('Okay, si estas seguro.');
+            // Procesar la respuesta
+            if (response.casesSuccess && response.casesSuccess.length > 0 && response.casesSuccess[0].infoCreatedCase) {
+                var caseID = response.casesSuccess[0].infoCreatedCase.caseID;
+                alert("Case ID: " + caseID); // Mostrar el alerta con el case ID
+            } else {
+                alert("No se encontró información de Case ID en la respuesta.");
+            }
+
+            // Mostrar modal con la respuesta
+            var responseModal = new bootstrap.Modal(document.getElementById('responseModal'));
+            responseModal.show();
         } catch (error) {
             console.error('Error al enviar la solicitud AJAX:', error);
-            document.getElementById('sentData').textContent = jsonString;
-            document.getElementById('serverResponse').textContent = 'Error al enviar la solicitud AJAX: ' + error.message;
-
+            // Mostrar error en modal
             var responseModal = new bootstrap.Modal(document.getElementById('responseModal'));
             responseModal.show();
         }
     }
+
 
 
     function createRadioButtonsForType(typeData) {
