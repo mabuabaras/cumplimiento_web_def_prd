@@ -129,7 +129,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
-                document.getElementById('sentData').textContent = jsonString;
+                var sentDataElement = document.getElementById('sentData');
+                var serverResponseElement = document.getElementById('serverResponse');
+                if (sentDataElement) sentDataElement.textContent = jsonString;
+        
                 if (xhr.status === 200) {
                     var response = JSON.parse(xhr.responseText);
                     if (response.casesSuccess && response.casesSuccess.length > 0 && response.casesSuccess[0].infoCreatedCase) {
@@ -139,11 +142,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         alert("No se encontró información de Case ID en la respuesta.");
                     }
                 } else {
-                    document.getElementById('serverResponse').textContent = xhr.statusText;
+                    if (serverResponseElement) serverResponseElement.textContent = xhr.statusText;
                 }
-
+        
                 var responseModal = new bootstrap.Modal(document.getElementById('responseModal'));
-                responseModal.show();
+                if (responseModal) responseModal.show();
             }
         };
 
