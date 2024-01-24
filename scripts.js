@@ -82,8 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function sendAjaxRequest(jsonString) {
         return new Promise((resolve, reject) => {
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', '  af_web_cumplimiento: https://af-web-form-pdn.azurewebsites.net/api/af_web_cumplimiento
-?', true);
+            xhr.open('POST', 'https://af-web-form-pdn.azurewebsites.net/api/af_web_cumplimiento?', true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onload = function() {
                 if (xhr.status === 200) {
