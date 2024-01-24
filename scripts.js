@@ -100,68 +100,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Función asíncrona para manejar la solicitud y respuesta
     async function sendDataToEndpoint() {
-        var formData = {};
-        var formElements = document.getElementById('reportForm').elements;
+    var formData = {};
+    var formElements = document.getElementById('reportForm').elements;
 
-        // Recolectar datos del formulario
-        for (var i = 0; i < formElements.length; i++) {
-            var element = formElements[i];
-            if (element.type !== 'submit' && element.name !== '') {
-                formData[element.name] = element.value;
-            }
-        }
-
-        // Remover campos vacíos o indefinidos
-        for (var key in formData) {
-            if (formData.hasOwnProperty(key) && (formData[key] === "" || formData[key] === undefined)) {
-                delete formData[key];
-            }
-        }
-
-        // Preparar el JSON a enviar
-        var jsonData = {
-            "name": document.querySelector('input[name="name"]').value,
-            "typePerson": "F",
-            "rol": "17",
-            "codeModel": "ALERTAMANUAL",
-            "typeModel": "6",
-            "valueAlert": "1000000",
-            "score": "500",
-            "description": formData['detailedDescription'],
-            "valueModel": [formData]
-        };
-
-        var jsonString = JSON.stringify([jsonData]);
-        console.log('Datos del formulario:', formData);
-        console.log('Datos JSON a enviar:', jsonData);
-
-        try {
-            // Enviar la solicitud y esperar la respuesta
-            var response = await sendAjaxRequest(jsonString);
-
-            // Procesar la respuesta
-            if (response.casesSuccess && response.casesSuccess.length > 0 && response.casesSuccess[0].infoCreatedCase) {
-                var caseID = response.casesSuccess[0].infoCreatedCase.caseID;
-                alert("Se ha generado el siguiente número de folio para el seguimiento de la denuncia: " + caseID); // Mostrar el alerta con el case ID
-
-            } else {
-                alert("No se encontró información de Case ID en la respuesta.");
-            }
-
-            setTimeout(function() {
-                window.location.reload();
-            }, 100);
-
-            // Mostrar modal con la respuesta
-            var responseModal = new bootstrap.Modal(document.getElementById('responseModal'));
-            responseModal.show();
-        } catch (error) {
-            console.error('Error al enviar la solicitud AJAX:', error);
-            // Mostrar error en modal
-            var responseModal = new bootstrap.Modal(document.getElementById('responseModal'));
-            responseModal.show();
+    // Recolectar datos del formulario
+    for (var i = 0; i < formElements.length; i++) {
+        var element = formElements[i];
+        if (element.type !== 'submit' && element.name !== '') {
+            formData[element.name] = element.value;
         }
     }
+
+    // Remover campos vacíos o indefinidos
+    for (var key in formData) {
+        if (formData.hasOwnProperty(key) && (formData[key] === "" || formData[key] === undefined)) {
+            delete formData[key];
+        }
+    }
+
+    // Preparar el JSON a enviar
+    var jsonData = {
+        "name": document.querySelector('input[name="name"]').value,
+        "typePerson": "F",
+        "rol": "17",
+        "codeModel": "ALERTAMANUAL",
+        "typeModel": "6",
+        "valueAlert": "1000000",
+        "score": "500",
+        "description": formData['detailedDescription'],
+        "valueModel": [formData]
+    };
+
+    var jsonString = JSON.stringify([jsonData]);
+    console.log('Datos del formulario:', formData);
+    console.log('Datos JSON a enviar:', jsonData);
+
+    try {
+        // Enviar la solicitud y esperar la respuesta
+        var response = await sendAjaxRequest(jsonString);
+
+        // Procesar la respuesta
+        if (response.casesSuccess && response.casesSuccess.length > 0 && response.casesSuccess[0].infoCreatedCase) {
+            var caseID = response.casesSuccess[0].infoCreatedCase.caseID;
+            alert("Se ha generado el siguiente número de folio para el seguimiento de la denuncia: " + caseID); // Mostrar el alerta con el case ID
+
+        } else {
+            alert("No se encontró información de Case ID en la respuesta.");
+        }
+
+        window.location.reload();
+
+    } catch (error) {
+        console.error('Error al enviar la solicitud AJAX:', error);
+        alert('Hubo un error al procesar la solicitud.');
+        window.location.reload();
+    }
+}
+
 
 
 
