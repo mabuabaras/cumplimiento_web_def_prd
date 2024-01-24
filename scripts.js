@@ -142,7 +142,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Procesar la respuesta
             if (response.casesSuccess && response.casesSuccess.length > 0 && response.casesSuccess[0].infoCreatedCase) {
                 var caseID = response.casesSuccess[0].infoCreatedCase.caseID;
-                alert("Case ID: " + caseID); // Mostrar el alerta con el case ID
+                alert("Se ha generado el siguiente número de folio para el seguimiento de la denuncia: " + caseID); // Mostrar el alerta con el case ID
+                window.location.reload(); 
             } else {
                 alert("No se encontró información de Case ID en la respuesta.");
             }
